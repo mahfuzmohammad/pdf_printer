@@ -1,0 +1,17 @@
+{
+  "name": "pdf_printer",
+  "version": "1.0.0",
+  "description": "This is a micro service that handles print html as pdf from external request",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md Mahfuzur Rahman Siddiquee",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "phantom": "^2.1.7"
+  }
+}
