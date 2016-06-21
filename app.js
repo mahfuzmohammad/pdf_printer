@@ -2,6 +2,8 @@ var express = require('express');
 var phantom = require('phantom');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var fs = require('fs');
+var https = require('https');
 var app = express();
 
 app.use(cors());
@@ -19,6 +21,13 @@ app.get('/', function (req, res) {
 	res.send("Documentation is comming soon!");
 });
 
-app.listen(config.PORT, function () {
-  console.log('Magic happens on port ' + config.PORT + '!');
+// app.listen(config.PORT, function () {
+//   console.log('Magic happens on port ' + config.PORT + '!');
+// });
+
+https.createServer({
+	key: fs.readFileSync('private.key'),
+	cert: fs.readFileSync('public.cert')
+}, app).listen(config.PORT, function() {
+	console.log('Magic happens on port ' + config.PORT + '!');
 });

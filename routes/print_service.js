@@ -26,7 +26,7 @@ exports.print = function(req, res, next) {
 	var file_name = (new Date()).getTime() + '.pdf';
 
 	print_with_phantom(req, content_url, file_name, function(pdflink) {
-		console.log("New pdf created at: http://" + config.HOST_NAME + ":" + config.PORT + "/" + pdflink);
-		res.json({ status: "success", url: "http://" + config.HOST_NAME + ":" + config.PORT + "/" + pdflink });
+		console.log("New pdf created at: https://" + config.HOST_NAME + ":" + config.PORT + "/" + pdflink);
+		res.json({ status: "success", url: "https://" + config.HOST_NAME + ":" + config.PORT + "/" + pdflink });
 	});
 }
